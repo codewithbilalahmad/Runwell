@@ -4,6 +4,10 @@ plugins {
 
 android {
     namespace = "com.muhammad.analytics.data"
+    compileSdk = 36
+    defaultConfig {
+        minSdk = 24
+    }
 }
 
 dependencies {
@@ -12,4 +16,5 @@ dependencies {
     implementation(projects.core.database)
     implementation(projects.core.domain)
     implementation(projects.analytics.domain)
+    implementation(libs.androidx.core.ktx)
 }

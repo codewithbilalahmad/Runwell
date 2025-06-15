@@ -4,6 +4,10 @@ plugins {
 
 android {
     namespace = "com.muhammad.run.location"
+    compileSdk = 36
+    defaultConfig {
+        minSdk = 24
+    }
 }
 
 dependencies {

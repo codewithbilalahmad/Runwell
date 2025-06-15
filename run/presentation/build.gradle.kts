@@ -5,6 +5,10 @@ plugins {
 
 android {
     namespace = "com.muhammad.run.presentation"
+    compileSdk = 36
+    defaultConfig {
+        minSdk = 24
+    }
 }
 
 dependencies {
@@ -15,4 +19,5 @@ dependencies {
     implementation(projects.run.domain)
     implementation(projects.core.connectivity.domain)
     implementation(projects.core.notification)
+    implementation(libs.androidx.core.ktx)
 }

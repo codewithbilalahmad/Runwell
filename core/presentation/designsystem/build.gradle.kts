@@ -5,6 +5,10 @@ plugins {
 
 android {
     namespace = "com.muhammad.core.presentation.designsystem"
+    compileSdk = 36
+    defaultConfig {
+        minSdk = 24
+    }
 }
 
 dependencies {

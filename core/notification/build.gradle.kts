@@ -4,6 +4,10 @@ plugins {
 
 android {
     namespace = "com.muhammad.core.notification"
+    compileSdk = 36
+    defaultConfig {
+        minSdk = 24
+    }
 }
 
 dependencies {

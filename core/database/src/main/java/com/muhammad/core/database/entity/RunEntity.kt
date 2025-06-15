@@ -1,0 +1,21 @@
+package com.muhammad.core.database.entity
+
+import androidx.room.*
+import org.bson.types.ObjectId
+
+@Entity
+data class RunEntity(
+    val durationMillis : Long,
+    val distanceMeters : Int,
+    val dateTimeUTC : String,
+    val latitude : Double,
+    val longitude : Double,
+    val avgSpeedKmh : Double,
+    val maxSpeedKmh : Double,
+    val totalElevationMeters : Int,
+    val mapPictureUrl : String?,
+    val avgHeartRate : Int?,
+    val maxHeartRate : Int?,
+    @PrimaryKey(autoGenerate = false)
+    val id : String = ObjectId().toHexString()
+)

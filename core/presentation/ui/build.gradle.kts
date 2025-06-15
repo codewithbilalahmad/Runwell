@@ -5,6 +5,10 @@ plugins {
 
 android {
     namespace = "com.muhammad.core.presentation.ui"
+    compileSdk = 36
+    defaultConfig {
+        minSdk = 24
+    }
 }
 
 dependencies {
@@ -15,4 +19,5 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(projects.core.domain)
     implementation(projects.core.presentation.designsystem)
+    implementation(libs.androidx.core.ktx)
 }

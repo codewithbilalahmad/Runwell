@@ -3,6 +3,7 @@ agp = "8.10.1"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
 secretsPlugin = "2.0.1"
+play-services-wearable = "19.0.0"
 playServicesMaps = "19.2.0"
 bson = "4.11.1"
 material3 = "1.4.0-alpha15"
@@ -64,11 +65,11 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 google-maps-android-compose = { module = "com.google.maps.android:maps-compose", version.ref = "maps" }
 google-android-gms-play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "gmsLocation"}
 org-mongodb-bson = { module = "org.mongodb:bson", version.ref = "bson" }
+play-services-wearable = { group = "com.google.android.gms", name = "play-services-wearable", version.ref = "play-services-wearable" }
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 google-maps-android-utils-ktx = { module = "com.google.maps.android:maps-utils-ktx", version.ref = "mapsUtils"}
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -108,5 +109,9 @@ ktor = [
     "ktor-client-core",
     "ktor-client-logging",
     "ktor-serialization-kotlinx-json"
+]
+room = [
+    "room-compiler",
+    "room-runtime"
 ]
 
