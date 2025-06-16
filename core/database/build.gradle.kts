@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.room)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -10,6 +11,13 @@ android {
     defaultConfig {
         minSdk = 24
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 }
 
 dependencies {
@@ -17,7 +25,8 @@ dependencies {
     implementation(libs.bundles.koin)
     implementation(projects.core.domain)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.bundles.room)
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
 }
 room {
     schemaDirectory("$projectDir/schemas")

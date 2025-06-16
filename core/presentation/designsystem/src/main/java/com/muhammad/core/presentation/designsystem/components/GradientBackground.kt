@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.geometry.Offset
@@ -20,12 +20,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.muhammad.core.presentation.designsystem.RunwellTheme
 
-@SuppressLint("NewApi", "ConfigurationScreenWidthHeight")
+@SuppressLint("ConfigurationScreenWidthHeight")
 @Composable
 fun GradientBackground(
     modifier: Modifier = Modifier,
     hasToolbar: Boolean = true,
-    content: @Composable ColumnScope.() -> Unit,
+    content :@Composable ColumnScope.() -> Unit,
 ) {
     val configuration = LocalConfiguration.current
     val density = LocalDensity.current
@@ -42,7 +42,7 @@ fun GradientBackground(
     val primaryColor = MaterialTheme.colorScheme.primary
     val isAtLeastAndroid12 = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {

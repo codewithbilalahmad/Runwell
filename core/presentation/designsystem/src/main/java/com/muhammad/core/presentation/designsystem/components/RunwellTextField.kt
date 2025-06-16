@@ -21,14 +21,21 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.autofill.ContentType
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.semantics.contentType
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -43,7 +50,7 @@ fun RunwellTextField(
     state: TextFieldState,
     startIcon: ImageVector?,
     endIcon: ImageVector?,
-    hint: String,
+    hint: String,type : ContentType,
     title: String?,
     error: String? = null,
     keyboardType: KeyboardType = KeyboardType.Text,
@@ -79,6 +86,9 @@ fun RunwellTextField(
                 MaterialTheme.colorScheme.onBackground
             ),
             modifier = Modifier
+                .semantics {
+                    contentType = type
+                }
                 .clip(RoundedCornerShape(16.dp))
                 .background(
                     if (isFocused) MaterialTheme.colorScheme.primary.copy(alpha = 0.05f) else MaterialTheme.colorScheme.surface
@@ -128,6 +138,7 @@ fun RunwellTextField(
         )
     }
 }
+
 @Preview
 @Composable
 private fun RunwellTextFieldPreview() {
@@ -137,7 +148,7 @@ private fun RunwellTextFieldPreview() {
             startIcon = EmailIcon,
             endIcon = CheckIcon,
             hint = "example@test.com",
-            title = "Email",
+            title = "Email", type = ContentType.EmailAddress,
             additionalInfo = "Must be a valid email",
             modifier = Modifier
                 .fillMaxWidth()

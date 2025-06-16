@@ -24,10 +24,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.autofill.ContentType
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.semantics.contentType
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.muhammad.core.presentation.designsystem.EyeClosedIcon
@@ -38,7 +41,7 @@ import com.muhammad.core.presentation.designsystem.RunwellTheme
 @Composable
 fun RunwellPasswordTextField(
     modifier: Modifier = Modifier,
-    state: TextFieldState,
+    state: TextFieldState,type : ContentType,
     isPasswordVisible: Boolean,
     onTogglePasswordVisibility: () -> Unit,
     hint: String,
@@ -58,7 +61,9 @@ fun RunwellPasswordTextField(
             textStyle = LocalTextStyle.current.copy(color = MaterialTheme.colorScheme.onBackground),
             cursorBrush = SolidColor(
                 MaterialTheme.colorScheme.onBackground
-            ), modifier = Modifier
+            ), modifier = Modifier.semantics{
+                contentType = type
+            }
                 .clip(RoundedCornerShape(16.dp))
                 .background(
                     if (isFocused) MaterialTheme.colorScheme.primary.copy(alpha = 0.05f) else MaterialTheme.colorScheme.surface
@@ -68,7 +73,7 @@ fun RunwellPasswordTextField(
                     color = if (isFocused) MaterialTheme.colorScheme.primary else Color.Transparent,
                     shape = RoundedCornerShape(16.dp)
                 )
-                .padding(12.dp)
+                .padding(horizontal = 12.dp)
                 .onFocusChanged {
                     isFocused = it.isFocused
                 }, decorator = { innerBox ->
@@ -92,7 +97,9 @@ fun RunwellPasswordTextField(
                         }
                         innerBox()
                     }
-                    IconButton(onClick = onTogglePasswordVisibility) {
+                    IconButton(onClick = {
+                        onTogglePasswordVisibility()
+                    }) {
                         val icon = if (isPasswordVisible) EyeOpenedIcon else EyeClosedIcon
                         Icon(
                             imageVector = icon,
@@ -115,7 +122,7 @@ private fun RunwellTextFieldPreview() {
             title = "Email",
             modifier = Modifier
                 .fillMaxWidth(),
-            isPasswordVisible = false,
+            isPasswordVisible = false, type = ContentType.NewPassword,
             onTogglePasswordVisibility = {}
         )
     }

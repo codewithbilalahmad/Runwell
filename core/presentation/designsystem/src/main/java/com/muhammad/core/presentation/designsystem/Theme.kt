@@ -1,11 +1,10 @@
 package com.muhammad.core.presentation.designsystem
 
-import android.annotation.SuppressLint
 import android.app.Activity
-import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
@@ -24,7 +23,6 @@ val DarkColorScheme = darkColorScheme(
     errorContainer = RunwellDarkRed5
 )
 
-@SuppressLint("NewApi")
 @Composable
 fun RunwellTheme(content : @Composable () -> Unit) {
     val colorScheme=  DarkColorScheme

@@ -1,5 +1,7 @@
 package com.muhammad.core.connectivity.domain.messaging
 
+import kotlin.time.Duration
+
 sealed interface MessagingAction{
     data object StartOrResume : MessagingAction
     data object Pause : MessagingAction

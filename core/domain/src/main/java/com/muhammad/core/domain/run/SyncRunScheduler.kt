@@ -7,7 +7,7 @@ interface SyncRunScheduler{
     suspend fun cancelAllSync()
     sealed interface SyncType{
         data class FetchRuns(val interval : Duration) : SyncType
-        data class DeleteRuns(val runId : RunId) : SyncType
+        data class DeleteRun(val runId : RunId) : SyncType
         class CreateRun(val run : Run, val mapPictureBytes : ByteArray) : SyncType
     }
 }
