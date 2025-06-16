@@ -20,8 +20,9 @@ Multiple-module Android app built with Kotlin, Jetpack Compose, Google Map Integ
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a372142e-a70f-45be-9696-7b6158de9723" alt="Screenshot 1" width="250" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/5fae26e6-04f8-4e87-833d-2e0c1bb3e4f3" alt="Screenshot 2" width="250" style="margin: 10px;"/>
+  <img src="https://github.com/user-attachments/assets/ee0d1a5c-83d0-4888-a278-4d4b68125ce6" alt="Welcome Screen" width="250" style="margin: 10px;"/>
+ <img src="https://github.com/user-attachments/assets/ff14055c-3353-4ad8-86b9-daff8c661734" alt="Login Screen" width="250" style="margin: 10px;"/>
+   <img src="https://github.com/user-attachments/assets/f3855d81-41df-4334-a6b0-ac8059374955" alt="Register Screen" width="250" style="margin: 10px;"/>
 </p>
 
 ---
@@ -31,6 +32,8 @@ Multiple-module Android app built with Kotlin, Jetpack Compose, Google Map Integ
 - Modular Android Architecture
 - Built with **Kotlin** and **Jetpack Compose**
 - Integration with **Google Maps**
+- Offline Support
+- Multi module (MVVM) Artictecture
 - Live **User Location** and **Tracking**
 - [Add more features as development progresses!]
 
