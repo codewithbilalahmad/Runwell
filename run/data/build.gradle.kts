@@ -29,4 +29,5 @@ dependencies {
     implementation(projects.run.domain)
     implementation(projects.core.connectivity.domain)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.bundles.koin)
 }

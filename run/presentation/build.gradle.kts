@@ -26,6 +26,13 @@ dependencies {
     implementation(projects.core.domain)
     implementation(projects.run.domain)
     implementation(projects.core.connectivity.domain)
+    implementation(projects.core.presentation.ui)
+    implementation(projects.core.presentation.designsystem)
     implementation(projects.core.notification)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
 }
