@@ -13,8 +13,11 @@ fun Duration.formatted(): String {
     return "$hours:$minutes:$seconds"
 }
 
-fun Double.toFormattedKmh(): String {
+fun Double.toFormattedKm(): String {
     return "${this.roundToDecimals(1)} km"
+}
+fun Double.toFormattedKmh(): String {
+    return "${this.roundToDecimals(1)} km/h"
 }
 
 @SuppressLint("DefaultLocale")

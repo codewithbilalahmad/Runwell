@@ -29,8 +29,7 @@ class AndroidLocationObserver(
             var isNetworkEnabled = false
             while (!isGpsEnabled && !isNetworkEnabled) {
                 isGpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
-                isNetworkEnabled =
-                    locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+                isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
                 if (!isGpsEnabled && !isNetworkEnabled) {
                     delay(3000L)
                 }
@@ -46,6 +45,7 @@ class AndroidLocationObserver(
             } else{
                 client.lastLocation.addOnSuccessListener { location ->
                     location?.let { loc ->
+                        println("Current Location -> Lat : ${loc.latitude} , Long : ${loc.longitude}")
                         trySend(location.toLocationWithAltitude())
                     }
                 }
@@ -54,6 +54,7 @@ class AndroidLocationObserver(
                     override fun onLocationResult(result: LocationResult) {
                         super.onLocationResult(result)
                         result.locations.lastOrNull()?.let { location ->
+                            println("Current Location -> Lat : ${location.latitude} , Long : ${location.longitude}")
                             trySend(location.toLocationWithAltitude())
                         }
                     }

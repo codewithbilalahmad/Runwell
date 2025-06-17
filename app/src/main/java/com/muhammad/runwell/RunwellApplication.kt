@@ -5,11 +5,13 @@ import android.content.Context
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.muhammad.auth.data.di.authDataModule
 import com.muhammad.auth.presentation.di.authModule
+import com.muhammad.core.connectivity.data.di.connectivityModule
 import com.muhammad.core.data.di.coreDataModule
 import com.muhammad.core.database.di.databaseModule
 import com.muhammad.run.data.di.runDataModule
 import com.muhammad.run.location.di.locationModule
 import com.muhammad.run.network.di.runNetworkModule
+import com.muhammad.run.presentation.di.runModule
 import com.muhammad.runwell.di.appModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
@@ -28,11 +30,19 @@ class RunwellApplication : Application() {
         super.onCreate()
         INSTANCE = this
         startKoin {
-            androidContext(this@RunwellApplication)
             androidLogger()
+            androidContext(this@RunwellApplication)
             modules(
-                coreDataModule, databaseModule, appModule, authDataModule, authModule,
-                locationModule, runNetworkModule, runDataModule
+                authDataModule,
+                authModule,
+                appModule,
+                coreDataModule,
+                runModule,
+                locationModule,
+                databaseModule,
+                runNetworkModule,
+                runDataModule,
+                connectivityModule
             )
         }
     }

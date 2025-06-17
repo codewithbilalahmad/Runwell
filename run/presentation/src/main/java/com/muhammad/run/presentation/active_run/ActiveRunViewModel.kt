@@ -32,7 +32,7 @@ import java.time.ZonedDateTime
 import kotlin.math.roundToInt
 
 @ExperimentalCoroutinesApi
-class ActiveRunViewModel constructor(
+class ActiveRunViewModel(
     private val runningTracker: RunningTracker,
     private val runRepository: RunRepository,
     private val watchConnector: WatchConnector,
@@ -69,7 +69,9 @@ class ActiveRunViewModel constructor(
             runningTracker.setIsTracking(isTracking)
         }.launchIn(viewModelScope)
         runningTracker.currentLocation.onEach { state ->
-            _state.value = _state.value.copy(currentLocation = state?.location)
+            _state.update {
+                it.copy(currentLocation = state?.location)
+            }
         }.launchIn(viewModelScope)
         runningTracker.runData.onEach { data ->
             _state.update { it.copy(runData = data) }
@@ -77,6 +79,7 @@ class ActiveRunViewModel constructor(
         runningTracker.elapsedTime.onEach { elapsedTime ->
             _state.update { it.copy(elapsedTime = elapsedTime) }
         }.launchIn(viewModelScope)
+        listenToWatchActions()
     }
 
     fun onAction(action: ActiveRunAction, triggerOnWatch: Boolean = true) {

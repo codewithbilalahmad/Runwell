@@ -27,7 +27,7 @@ fun RunwellDialog(
     onDismiss: () -> Unit,
     description: String,
     primaryButton: @Composable RowScope.() -> Unit,
-    secondaryButton: @Composable RowScope.() -> Unit,
+    secondaryButton: @Composable RowScope.() -> Unit = {},
 ) {
     Dialog(onDismissRequest = onDismiss) {
         Column(
