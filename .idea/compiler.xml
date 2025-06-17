@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="Runwell.auth.presentattion" target="21" />
+      <module name="Runwell.wear.data" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -41,8 +41,10 @@ class AndroidLocationObserver(
                     context,
                     Manifest.permission.ACCESS_COARSE_LOCATION
                 ) != PackageManager.PERMISSION_GRANTED){
+                println("Location Permissions not granted!")
                 close()
             } else{
+                println("Getting Location..")
                 client.lastLocation.addOnSuccessListener { location ->
                     location?.let { loc ->
                         println("Current Location -> Lat : ${loc.latitude} , Long : ${loc.longitude}")

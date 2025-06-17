@@ -31,6 +31,10 @@ kotlinx-serialization = "1.8.1"
 health = "1.0.0"
 appcompat = "1.7.1"
 material = "1.12.0"
+composeWearOs = "1.4.0"
+composeMaterialWearOs = "1.0.0-alpha32"
+wear = "1.3.0"
+materialVersion = "1.12.0"
 
 [libraries]
 koin-android-workmanager = { group = "io.insert-koin", name = "koin-androidx-workmanager", version.ref = "koin" }
@@ -75,7 +79,11 @@ play-services-wearable = { group = "com.google.android.gms", name = "play-servic
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 google-maps-android-utils-ktx = { module = "com.google.maps.android:maps-utils-ktx", version.ref = "mapsUtils"}
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-wear-compose-material = { group = "androidx.wear.compose", name = "compose-material3", version.ref = "composeMaterialWearOs" }
+androidx-wear-compose-foundation = { group = "androidx.wear.compose", name = "compose-foundation", version.ref = "composeWearOs" }
+androidx-wear-compose-ui-tooling = { group = "androidx.wear.compose", name = "compose-ui-tooling", version.ref = "composeWearOs" }
+androidx-wear = { group = "androidx.wear", name = "wear", version.ref = "wear" }
+material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -98,10 +106,6 @@ compose = [
     "androidx-ui",
     "androidx-ui-graphics",
     "androidx-ui-tooling-preview",
-]
-compose-debug = [
-    "androidx-ui-tooling",
-    "androidx-ui-test-manifest",
 ]
 koin = ["koin-androidx-compose","koin-android-workmanager"]
 ktor = [

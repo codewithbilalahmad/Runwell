@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/core/notification" />
             <option value="$PROJECT_DIR$/core/presentation" />
             <option value="$PROJECT_DIR$/core/presentation/designsystem" />
+            <option value="$PROJECT_DIR$/core/presentation/designsystem_wear" />
             <option value="$PROJECT_DIR$/core/presentation/ui" />
             <option value="$PROJECT_DIR$/run" />
             <option value="$PROJECT_DIR$/run/data" />
@@ -37,6 +38,12 @@
             <option value="$PROJECT_DIR$/run/location" />
             <option value="$PROJECT_DIR$/run/network" />
             <option value="$PROJECT_DIR$/run/presentation" />
+            <option value="$PROJECT_DIR$/wear" />
+            <option value="$PROJECT_DIR$/wear/app" />
+            <option value="$PROJECT_DIR$/wear/run" />
+            <option value="$PROJECT_DIR$/wear/run/data" />
+            <option value="$PROJECT_DIR$/wear/run/domain" />
+            <option value="$PROJECT_DIR$/wear/run/presentation" />
           </set>
         </option>
       </GradleProjectSettings>

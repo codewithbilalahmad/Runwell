@@ -41,6 +41,7 @@ class RunningTracker(
     val elapsedTime = _elapsedTime.asStateFlow()
     val currentLocation = isObservingLocation.flatMapLatest { isObservingLocation ->
         if (isObservingLocation) {
+            println("Observing Location...")
             locationObserver.observeLocation(1000L)
         } else flowOf()
     }.stateIn(applicationScope, SharingStarted.Lazily, null)
