@@ -67,6 +67,11 @@ fun TrackerMap(
     val maskerPosition = remember(markerPositionLat, markerPositionLong) {
         LatLng(markerPositionLat.toDouble(), markerPositionLong.toDouble())
     }
+    LaunchedEffect(maskerPosition, isRunFinished) {
+        if(!isRunFinished){
+            markerState.position = maskerPosition
+        }
+    }
     LaunchedEffect(currentLocation, isRunFinished) {
         if (currentLocation != null && !isRunFinished) {
             val latLng = LatLng(currentLocation.lat, currentLocation.long)

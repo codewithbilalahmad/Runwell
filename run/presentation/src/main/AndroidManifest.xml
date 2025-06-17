@@ -10,7 +10,7 @@
     <application>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="" />
+            android:value="AIzaSyBSwXtYIniHyvk5Le72DDYBYlKZ3M5t6vk" />
         <service
             android:name="com.muhammad.core.notification.ActiveRunService"
             android:foregroundServiceType="location" />

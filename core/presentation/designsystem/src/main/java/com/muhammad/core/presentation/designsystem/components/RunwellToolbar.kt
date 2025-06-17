@@ -30,7 +30,7 @@ fun RunwellToolbar(
     showBackButton: Boolean,
     title: String,
     menuItems: List<DropDownItem> = emptyList(),
-    onMenuItemClick: () -> Unit = {},
+    onMenuItemClick: (Int) -> Unit = {},
     onBackClick: () -> Unit = {},
     scrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(),
     startContent: (@Composable () -> Unit)? = null,
@@ -70,7 +70,7 @@ fun RunwellToolbar(
                             Row(
                                 verticalAlignment = Alignment.CenterVertically,
                                 modifier = Modifier
-                                    .clickable { onMenuItemClick() }
+                                    .clickable { onMenuItemClick(index) }
                                     .fillMaxWidth()
                                     .padding(16.dp)
                             ) {

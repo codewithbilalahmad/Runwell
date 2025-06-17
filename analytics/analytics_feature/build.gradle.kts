@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidDynamicFeature)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 android {
     namespace = "com.muhammad.analytics.analytics_feature"
@@ -21,5 +22,7 @@ dependencies {
     implementation(projects.analytics.domain)
     implementation(projects.analytics.data)
     implementation(projects.core.database)
+    implementation(projects.core.presentation.designsystem)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.bundles.koin)
 }

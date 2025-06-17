@@ -7,7 +7,7 @@ interface AnalyticsDao{
     @Query("SELECT SUM(distanceMeters) FROM runentity")
     suspend fun getTotalDistance() : Int
     @Query("SELECT SUM(durationMillis) FROM runentity")
-    suspend fun getTotalDuration() : Long
+    suspend fun getTotalTimeRun() : Long
     @Query("SELECT MAX(maxSpeedKmh) FROM runentity")
     suspend fun getMaxRunSpeed() : Double
     @Query("SELECT AVG(distanceMeters) FROM runentity")
