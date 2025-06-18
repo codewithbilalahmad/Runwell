@@ -17,7 +17,7 @@ object PolyColorCalculator {
             minSpeed = 5.0,
             maxSpeed = 20.0,
             colorStart = Color.Green,
-            Color.Yellow,
+           colorMid =  Color.Yellow,
             colorEnd = Color.Red
         )
     }

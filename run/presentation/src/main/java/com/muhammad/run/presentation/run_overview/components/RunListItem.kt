@@ -126,7 +126,7 @@ fun RunningTimeSection(modifier: Modifier = Modifier, duration: String) {
                 tint = MaterialTheme.colorScheme.primary
             )
         }
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.width(16.dp))
         Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center) {
             Text(
                 text = stringResource(R.string.total_running_time),

@@ -36,12 +36,13 @@ import com.muhammad.core.domain.location.Location
 import com.muhammad.core.domain.location.LocationTimeStamp
 import com.muhammad.core.presentation.designsystem.RunIcon
 import com.muhammad.run.presentation.R
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-@OptIn(MapsComposeExperimentalApi::class)
+@OptIn(MapsComposeExperimentalApi::class, DelicateCoroutinesApi::class)
 @Composable
 fun TrackerMap(
     modifier: Modifier = Modifier,

@@ -92,7 +92,7 @@ class ActiveRunService : Service() {
         val channel = NotificationChannel(
             CHANNEL_ID,
             getString(NotificationR.string.active_run),
-            NotificationManager.IMPORTANCE_DEFAULT
+            NotificationManager.IMPORTANCE_LOW
         )
         notificationManager.createNotificationChannel(channel)
     }

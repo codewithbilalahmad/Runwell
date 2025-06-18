@@ -27,11 +27,12 @@ fun RunEntity.toRun(): Run {
     )
 }
 
+@SuppressLint("NewApi")
 fun Run.toRunEntity(): RunEntity {
     return RunEntity(
         id = id ?: ObjectId().toHexString(),
         durationMillis = duration.inWholeMilliseconds,
-        dateTimeUTC = dateTimeUTC.toString(),
+        dateTimeUTC = dateTimeUTC.toInstant().toString(),
         latitude = location.lat,
         longitude = location.long,
         mapPictureUrl = mapPictureUrl,

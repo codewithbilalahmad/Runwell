@@ -85,8 +85,7 @@ class RunningTracker(
             val distanceMeters = LocationDataCalculator.getTotalDistanceMeters(locations = newLocationList)
             val distanceKm = distanceMeters / 1000.0
             val currentDuration = location.durationTimeStamp
-            val avgSecondsPerKm =
-                if (distanceKm == 0.0) 0 else (currentDuration.inWholeSeconds / distanceKm).roundToInt()
+            val avgSecondsPerKm = if (distanceKm == 0.0) 0 else (currentDuration.inWholeSeconds / distanceKm).roundToInt()
             _runData.update {
                 it.copy(
                     distanceMeters = distanceMeters,
@@ -105,7 +104,7 @@ class RunningTracker(
         }.launchIn(applicationScope)
     }
     fun setIsTracking(isTracking : Boolean){
-        _isTracking.update { isTracking }
+        this._isTracking.value = isTracking
     }
     fun startObservingLocation(){
         isObservingLocation.update { true }

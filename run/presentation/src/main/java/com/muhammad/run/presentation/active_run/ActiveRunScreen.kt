@@ -54,7 +54,6 @@ fun ActiveRunScreen(
     viewModel: ActiveRunViewModel = koinViewModel(),
 ) {
     val context= LocalContext.current
-    val state by viewModel.state.collectAsStateWithLifecycle()
     ObserveAsEvents(viewModel.events) {event ->
         when(event){
             is ActiveRunEvent.Error ->{
@@ -63,10 +62,10 @@ fun ActiveRunScreen(
             ActiveRunEvent.RunSaved -> onFinish()
         }
     }
-    ActiveRunScreenContent(state = state, onServiceToggle = onServiceToggle, onAction = {action ->
+    ActiveRunScreenContent(state = viewModel.state, onServiceToggle = onServiceToggle, onAction = {action ->
         when(action){
             is ActiveRunAction.OnBackClick ->{
-                if(!state.hasStartingRunning){
+                if(!viewModel.state.hasStartingRunning){
                     onBack()
                 }
             }
@@ -92,7 +91,7 @@ private fun ActiveRunScreenContent(
             val hasNotificationPermission = if (Build.VERSION.SDK_INT >= 33) {
                 perms[Manifest.permission.POST_NOTIFICATIONS] == true
             } else true
-            val showLocationRationale = activity.shouldShowLocationPermissionRationale()
+            val showLocationRationale = activity.showShowNotificationPermissionRationale()
             val showNotificationRationale = activity.showShowNotificationPermissionRationale()
             onAction(
                 ActiveRunAction.SubmitLocationPermissionInfo(
