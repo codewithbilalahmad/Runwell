@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
+import kotlin.time.Duration
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class RunningTracker(
@@ -33,9 +34,8 @@ class RunningTracker(
                 applicationScope,
                 SharingStarted.Lazily, 0
             )
-    val elapsedTime =
-        watchToPhoneConnector.messagingActions.filterIsInstance<MessagingAction.TimeUpdate>()
-            .map { it.elapsedDuration }.stateIn(applicationScope, SharingStarted.Lazily, 0)
+    val elapsedTime = watchToPhoneConnector.messagingActions.filterIsInstance<MessagingAction.TimeUpdate>()
+            .map { it.elapsedDuration }.stateIn(applicationScope, SharingStarted.Lazily, Duration.ZERO)
     init {
         watchToPhoneConnector.messagingActions.onEach { action ->
             when(action){
