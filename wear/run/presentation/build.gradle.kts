@@ -7,10 +7,8 @@ plugins {
 android {
     namespace = "com.muhammad.wear.run.presentation"
     compileSdk = 36
-
     defaultConfig {
         minSdk = 24
-        consumerProguardFiles("consumer-rules.pro")
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

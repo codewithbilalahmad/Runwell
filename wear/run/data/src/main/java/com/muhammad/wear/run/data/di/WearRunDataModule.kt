@@ -8,7 +8,7 @@ import com.muhammad.wear.run.domain.RunningTracker
 import org.koin.core.module.dsl.*
 import org.koin.dsl.*
 
-val warnUpDataModule = module {
+val wearRunDataModule = module {
     singleOf(::HealthServiceExerciseTracker).bind<ExerciseTracker>()
     singleOf(::WatchToPhoneConnector).bind<PhoneConnector>()
     singleOf(::RunningTracker)

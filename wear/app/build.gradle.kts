@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -8,11 +9,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.muhammad.wear.app"
-        minSdk = 34
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 30
 
     }
 
